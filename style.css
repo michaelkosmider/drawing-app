@@ -19,12 +19,12 @@ canvas {
     border: 0px;
 }
 
-#eraser {
+.eraser {
     background-color: rgb(249, 156, 221);
     color: white;
     border: 0px;
 }
 
-.active, .active#eraser {
+.active, .active.eraser {
     border: 2px solid black;
 }
