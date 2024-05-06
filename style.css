@@ -1,0 +1,30 @@
+canvas {
+    border: 2px solid black;
+}
+
+.toolbox {
+    display: flex;
+    gap: 5px;
+}
+
+.tool {
+    flex-basis: 50px;
+    border: 1px solid black;
+    border-radius: 12%;
+}
+
+#clear-button {
+    background-color: red;
+    color: white;
+    border: 0px;
+}
+
+#eraser {
+    background-color: rgb(249, 156, 221);
+    color: white;
+    border: 0px;
+}
+
+.active, .active#eraser {
+    border: 2px solid black;
+}
