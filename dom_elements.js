@@ -8,11 +8,12 @@ const layers = document.querySelector("#layers");
 
 const colorPicker = document.querySelector("#color-picker");
 const lineSizer = document.querySelector("#line-sizer");
+const clearButton = document.querySelector("#clear-button");
 
 const colorButtons = document.querySelectorAll(".color-button");
 
-const mechanismButtonsArr = document.querySelectorAll(".mechanism");
-const mechanismButtonsMap = new Map();
-for (let i = 0; i < mechanismButtonsArr.length; i++) {
-    mechanismButtonsMap.set(mechanismButtonsArr[i].dataset.mechanism, mechanismButtonsArr[i]);
+const utensilButtonsArr = document.querySelectorAll(".utensil");
+const utensilButtonsMap = new Map();
+for (let i = 0; i < utensilButtonsArr.length; i++) {
+    utensilButtonsMap.set(utensilButtonsArr[i].dataset.utensil, utensilButtonsArr[i]);
 }

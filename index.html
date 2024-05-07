@@ -12,20 +12,20 @@
         <canvas id="preview-layer"></canvas>
     </div>
     <div class="toolbox">
-        <button class="tool" id="clear-button" onclick="clearCanvas()">Clear</button>
-        <button class="tool mechanism eraser" data-mechanism="eraser">Erase</button>
+        <button class="tool" id="clear-button"">Clear</button>
+        <button class="tool utensil eraser" data-utensil="eraser">Erase</button>
         <div class="tool color-button" data-index="0"></div>
         <div class="tool color-button" data-index="1"></div>
         <input class="tool" id="color-picker" type="color" >
         <input class="tool" id="line-sizer" type="range" min="1" max="50" value="5" >
-        <button class="tool mechanism" data-mechanism="pen">Pen</button>
-        <button class="tool mechanism" data-mechanism="rectangle">Rect</button>
+        <button class="tool utensil" data-utensil="pen">Pen</button>
+        <button class="tool utensil" data-utensil="rectangle">Rect</button>
     </div>
-    <script src="globals.js"></script>
     <script src="dom_elements.js"></script>
+    <script src="utensils.js"></script>
     <script src="canvas_init.js"></script>
-    <script src="mechanisms.js"></script>
     <script src="modifiers.js"></script>
+    <script src="framework.js"></script>
     <script src="listeners.js"></script>
 </body>
 </html>
