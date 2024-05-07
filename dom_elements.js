@@ -6,6 +6,7 @@ const layers = document.querySelector("#layers");
 
 // selecting the tools from the dom
 
+const toolbox = document.querySelector(".toolbox");
 const colorPicker = document.querySelector("#color-picker");
 const lineSizer = document.querySelector("#line-sizer");
 const clearButton = document.querySelector("#clear-button");

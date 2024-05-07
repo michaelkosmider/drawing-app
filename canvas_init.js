@@ -1,7 +1,6 @@
 // drawing space setup
 realLayer.width = window.innerWidth-20;
-realLayer.height = window.innerHeight-100;//window.innerHeight - toolbox.getBoundingClientRect().height - 20;
-console.log(toolbox.getBoundingClientRect().height);
+realLayer.height = window.innerHeight-100;
 const layersRect = layers.getBoundingClientRect();
 previewLayer.style.position = "absolute";
 previewLayer.style.top = layersRect.top+"px";
