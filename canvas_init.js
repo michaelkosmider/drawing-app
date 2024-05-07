@@ -1,6 +1,7 @@
 // drawing space setup
 realLayer.width = window.innerWidth-20;
-realLayer.height = 600;
+realLayer.height = window.innerHeight-100;//window.innerHeight - toolbox.getBoundingClientRect().height - 20;
+console.log(toolbox.getBoundingClientRect().height);
 const layersRect = layers.getBoundingClientRect();
 previewLayer.style.position = "absolute";
 previewLayer.style.top = layersRect.top+"px";
@@ -12,14 +13,17 @@ const previewContext = previewLayer.getContext("2d");
 const drawingSpace = {real: realContext, prev: previewContext, rect:layersRect}
 
 // initializing utensils
+const utensilMap = new Map();
 let pen = new Pen(drawingSpace);
 let rectangle = new Rectangle(drawingSpace);
 let eraser = new Pen(drawingSpace, true);
-const utensilMap = new Map();
+let line = new Line(drawingSpace);
+let circle = new Circle(drawingSpace);
 utensilMap.set(pen.name, pen);
 utensilMap.set(rectangle.name, rectangle);
 utensilMap.set(eraser.name, eraser);
-
+utensilMap.set(line.name, line);
+utensilMap.set(circle.name, circle);
 
 // setting defaults for drawing
 let colors = ["black", "white"];
