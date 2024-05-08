@@ -13,12 +13,12 @@ class Pen {
 
     start(event) {
         this.real.beginPath();
-        this.real.moveTo(event.clientX - this.rect.left, event.clientY - this.rect.top);  
-        this.real.lineTo(event.clientX - this.rect.left, event.clientY - this.rect.top);
+        this.real.moveTo(event.pageX - this.rect.left, event.pageY - this.rect.top);  
+        this.real.lineTo(event.pageX - this.rect.left, event.pageY - this.rect.top);
         this.real.stroke();  
     }
     continue(event) {
-        this.real.lineTo(event.clientX - this.rect.left, event.clientY - this.rect.top);
+        this.real.lineTo(event.pageX - this.rect.left, event.pageY - this.rect.top);
         this.real.stroke();
     }
     stop(event) {}
@@ -39,21 +39,21 @@ class Rectangle {
     start(event) {
         this.prev.beginPath();
         this.real.beginPath();
-        this.startX = event.clientX - this.rect.left;
-        this.startY = event.clientY - this.rect.top;  
+        this.startX = event.pageX - this.rect.left;
+        this.startY = event.pageY - this.rect.top;  
     }
     continue(event) {
         this.prev.clearRect(0, 0, this.rect.width, this.rect.height);
-        let width = event.clientX - this.rect.left - this.startX;
-        let height = event.clientY - this.rect.top - this.startY;
+        let width = event.pageX - this.rect.left - this.startX;
+        let height = event.pageY - this.rect.top - this.startY;
         this.prev.beginPath();
         this.prev.rect(this.startX, this.startY, width, height);
         this.prev.stroke();
     }
     stop(event) {
         this.prev.clearRect(0, 0, this.rect.width, this.rect.height);
-        let width = event.clientX - this.rect.left - this.startX;
-        let height = event.clientY - this.rect.top - this.startY;
+        let width = event.pageX - this.rect.left - this.startX;
+        let height = event.pageY - this.rect.top - this.startY;
         this.real.rect(this.startX, this.startY, width, height);
         this.real.stroke();
     }
@@ -73,15 +73,15 @@ class Line {
     start(event) {
         this.prev.beginPath();
         this.real.beginPath();
-        this.startX = event.clientX - this.rect.left;
-        this.startY = event.clientY - this.rect.top;  
+        this.startX = event.pageX - this.rect.left;
+        this.startY = event.pageY - this.rect.top;  
         this.prev.moveTo(this.startX, this.startY);
         this.real.moveTo(this.startX, this.startY);
     }
     continue(event) {
         this.prev.clearRect(0, 0, this.rect.width, this.rect.height);
-        let width = event.clientX - this.rect.left - this.startX;
-        let height = event.clientY - this.rect.top - this.startY;
+        let width = event.pageX - this.rect.left - this.startX;
+        let height = event.pageY - this.rect.top - this.startY;
         this.prev.beginPath();
         this.prev.moveTo(this.startX, this.startY);
         this.prev.lineTo(this.startX + width, this.startY + height);
@@ -89,8 +89,8 @@ class Line {
     }
     stop(event) {
         this.prev.clearRect(0, 0, this.rect.width, this.rect.height);
-        let width = event.clientX - this.rect.left - this.startX;
-        let height = event.clientY - this.rect.top - this.startY;
+        let width = event.pageX - this.rect.left - this.startX;
+        let height = event.pageY - this.rect.top - this.startY;
         this.real.lineTo(this.startX + width, this.startY + height);
         this.real.stroke();
     }
@@ -110,21 +110,21 @@ class Circle {
     start(event) {
         this.prev.beginPath();
         this.real.beginPath();
-        this.startX = event.clientX - this.rect.left;
-        this.startY = event.clientY - this.rect.top;  
+        this.startX = event.pageX - this.rect.left;
+        this.startY = event.pageY - this.rect.top;  
     }
     continue(event) {
         this.prev.clearRect(0, 0, this.rect.width, this.rect.height);
-        let width = event.clientX - this.rect.left - this.startX;
-        let height = event.clientY - this.rect.top - this.startY;
+        let width = event.pageX - this.rect.left - this.startX;
+        let height = event.pageY - this.rect.top - this.startY;
         this.prev.beginPath();
         this.prev.ellipse(this.startX+width/2, this.startY+height/2, Math.abs(width/2), Math.abs(height/2), 0, 0, 2*Math.PI);
         this.prev.stroke();
     }
     stop(event) {
         this.prev.clearRect(0, 0, this.rect.width, this.rect.height);
-        let width = event.clientX - this.rect.left - this.startX;
-        let height = event.clientY - this.rect.top - this.startY;
+        let width = event.pageX - this.rect.left - this.startX;
+        let height = event.pageY - this.rect.top - this.startY;
         this.real.ellipse(this.startX+width/2, this.startY+height/2, Math.abs(width/2), Math.abs(height/2), 0, 0, 2*Math.PI);
         this.real.stroke();
     }

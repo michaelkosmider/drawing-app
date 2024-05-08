@@ -3,6 +3,7 @@ let currentlyDrawing = false;
 function drawStart(event) {
     currentlyDrawing = true;
     drawUtensil.start(event);
+    console.log(event.target);
 }
 function drawContinue(event) {
     if(currentlyDrawing) {

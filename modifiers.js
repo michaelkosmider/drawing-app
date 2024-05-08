@@ -4,7 +4,7 @@ function changeUtensil(event) {
         realContext.strokeStyle = colors[activeColor];
     }
     utensilButtonsMap.get(drawUtensil.name).classList.remove("active");
-    drawUtensil = utensilMap.get(event.target.dataset.utensil);
+    drawUtensil = utensilMap.get(event.currentTarget.dataset.utensil);
     if(drawUtensil.name === "eraser") {
         realContext.strokeStyle = "white";
     }
